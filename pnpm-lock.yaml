@@ -1,0 +1,170 @@
+lockfileVersion: '6.0'
+
+settings:
+  autoInstallPeers: true
+  excludeLinksFromLockfile: false
+
+dependencies:
+  '@envio-dev/hypersync-client':
+    specifier: ^0.1.9
+    version: 0.1.9
+  viem:
+    specifier: ^2.9.6
+    version: 2.9.6
+
+packages:
+
+  /@adraffy/ens-normalize@1.10.0:
+    resolution: {integrity: sha512-nA9XHtlAkYfJxY7bce8DcN7eKxWWCWkU+1GR9d+U6MbNpfwQp8TI7vqOsBsMcHoT4mBu2kypKoSKnghEzOOq5Q==}
+    dev: false
+
+  /@envio-dev/hypersync-client-darwin-arm64@0.1.9:
+    resolution: {integrity: sha512-6to10hmNXymN2gFZ42cnnAeQpYv0E6S+v69hawVGutLSIdXGlgCgZkDwteWupjTRAvHKHH71kSX83O00iD5NIw==}
+    engines: {node: '>= 10'}
+    cpu: [arm64]
+    os: [darwin]
+    requiresBuild: true
+    dev: false
+    optional: true
+
+  /@envio-dev/hypersync-client-darwin-x64@0.1.9:
+    resolution: {integrity: sha512-4WHgDN674IxM4q5Qn/Zjdlcri26lc7TvughWcSGqFhazabqOqi1WvjMPIJNFt+fVmckgB0W+znQP/GwH1e/qig==}
+    engines: {node: '>= 10'}
+    cpu: [x64]
+    os: [darwin]
+    requiresBuild: true
+    dev: false
+    optional: true
+
+  /@envio-dev/hypersync-client-linux-arm64-gnu@0.1.9:
+    resolution: {integrity: sha512-lfpCE0wfQE9kDqrG3RSNKT7OHGFRNqi5Qr/15V0UScmIeJ4U+Rs8DofjMoASxamGH+pr72f1+unhzjTxrrMmlQ==}
+    engines: {node: '>= 10'}
+    cpu: [arm64]
+    os: [linux]
+    requiresBuild: true
+    dev: false
+    optional: true
+
+  /@envio-dev/hypersync-client-linux-x64-gnu@0.1.9:
+    resolution: {integrity: sha512-14uThbHuf4rd4YcU9lVKjicm5p/x1r3ASJzSDMkAbUjlw58WG8etMZfh4gpLlkkJLM7zJkH+00WhrWiQOev+uA==}
+    engines: {node: '>= 10'}
+    cpu: [x64]
+    os: [linux]
+    requiresBuild: true
+    dev: false
+    optional: true
+
+  /@envio-dev/hypersync-client-linux-x64-musl@0.1.9:
+    resolution: {integrity: sha512-dOeZDuo0CVtTqHfegYOFd1V8mv0uZOqLCVT+RAmByLXqmQyE2uUTgOvIcyfzp0+KwKcZG/81IL42wV/XbipBsA==}
+    engines: {node: '>= 10'}
+    cpu: [x64]
+    os: [linux]
+    requiresBuild: true
+    dev: false
+    optional: true
+
+  /@envio-dev/hypersync-client-win32-x64-msvc@0.1.9:
+    resolution: {integrity: sha512-t7UhosjGbcZdRNnzUjzYRYrwwDY1z1W6Gcd07YPqzuxBPCatZ4O2hDgH2cY/EEOFwIx6unzOcULYhct/h23ewA==}
+    engines: {node: '>= 10'}
+    cpu: [x64]
+    os: [win32]
+    requiresBuild: true
+    dev: false
+    optional: true
+
+  /@envio-dev/hypersync-client@0.1.9:
+    resolution: {integrity: sha512-ZN2tFyKne15wEQBZNl0YeWzqRUyDksDnewKoCYOxLqa6JOmAYnZacXaMuYL0QSFGCRbq9dK07ksuweY2Y+uORQ==}
+    engines: {node: '>= 10'}
+    optionalDependencies:
+      '@envio-dev/hypersync-client-darwin-arm64': 0.1.9
+      '@envio-dev/hypersync-client-darwin-x64': 0.1.9
+      '@envio-dev/hypersync-client-linux-arm64-gnu': 0.1.9
+      '@envio-dev/hypersync-client-linux-x64-gnu': 0.1.9
+      '@envio-dev/hypersync-client-linux-x64-musl': 0.1.9
+      '@envio-dev/hypersync-client-win32-x64-msvc': 0.1.9
+    dev: false
+
+  /@noble/curves@1.2.0:
+    resolution: {integrity: sha512-oYclrNgRaM9SsBUBVbb8M6DTV7ZHRTKugureoYEncY5c65HOmRzvSiTE3y5CYaPYJA/GVkrhXEoF0M3Ya9PMnw==}
+    dependencies:
+      '@noble/hashes': 1.3.2
+    dev: false
+
+  /@noble/hashes@1.3.2:
+    resolution: {integrity: sha512-MVC8EAQp7MvEcm30KWENFjgR+Mkmf+D189XJTkFIlwohU5hcBbn1ZkKq7KVTi2Hme3PMGF390DaL52beVrIihQ==}
+    engines: {node: '>= 16'}
+    dev: false
+
+  /@scure/base@1.1.6:
+    resolution: {integrity: sha512-ok9AWwhcgYuGG3Zfhyqg+zwl+Wn5uE+dwC0NV/2qQkx4dABbb/bx96vWu8NSj+BNjjSjno+JRYRjle1jV08k3g==}
+    dev: false
+
+  /@scure/bip32@1.3.2:
+    resolution: {integrity: sha512-N1ZhksgwD3OBlwTv3R6KFEcPojl/W4ElJOeCZdi+vuI5QmTFwLq3OFf2zd2ROpKvxFdgZ6hUpb0dx9bVNEwYCA==}
+    dependencies:
+      '@noble/curves': 1.2.0
+      '@noble/hashes': 1.3.2
+      '@scure/base': 1.1.6
+    dev: false
+
+  /@scure/bip39@1.2.1:
+    resolution: {integrity: sha512-Z3/Fsz1yr904dduJD0NpiyRHhRYHdcnyh73FZWiV+/qhWi83wNJ3NWolYqCEN+ZWsUz2TWwajJggcRE9r1zUYg==}
+    dependencies:
+      '@noble/hashes': 1.3.2
+      '@scure/base': 1.1.6
+    dev: false
+
+  /abitype@1.0.0:
+    resolution: {integrity: sha512-NMeMah//6bJ56H5XRj8QCV4AwuW6hB6zqz2LnhhLdcWVQOsXki6/Pn3APeqxCma62nXIcmZWdu1DlHWS74umVQ==}
+    peerDependencies:
+      typescript: '>=5.0.4'
+      zod: ^3 >=3.22.0
+    peerDependenciesMeta:
+      typescript:
+        optional: true
+      zod:
+        optional: true
+    dev: false
+
+  /isows@1.0.3(ws@8.13.0):
+    resolution: {integrity: sha512-2cKei4vlmg2cxEjm3wVSqn8pcoRF/LX/wpifuuNquFO4SQmPwarClT+SUCA2lt+l581tTeZIPIZuIDo2jWN1fg==}
+    peerDependencies:
+      ws: '*'
+    dependencies:
+      ws: 8.13.0
+    dev: false
+
+  /viem@2.9.6:
+    resolution: {integrity: sha512-VVFWjGQei2wnWTvAB/xrIf22m6flCwxeBr8LnwejXMTSSi1EORWEswrw2lfKTmw3TlRPSG4uSiQMa/d0l0DKRg==}
+    peerDependencies:
+      typescript: '>=5.0.4'
+    peerDependenciesMeta:
+      typescript:
+        optional: true
+    dependencies:
+      '@adraffy/ens-normalize': 1.10.0
+      '@noble/curves': 1.2.0
+      '@noble/hashes': 1.3.2
+      '@scure/bip32': 1.3.2
+      '@scure/bip39': 1.2.1
+      abitype: 1.0.0
+      isows: 1.0.3(ws@8.13.0)
+      ws: 8.13.0
+    transitivePeerDependencies:
+      - bufferutil
+      - utf-8-validate
+      - zod
+    dev: false
+
+  /ws@8.13.0:
+    resolution: {integrity: sha512-x9vcZYTrFPC7aSIbj7sRCYo7L/Xb8Iy+pW0ng0wt2vCJv7M9HOMy0UoN3rr+IFC7hb7vXoqS+P9ktyLLLhO+LA==}
+    engines: {node: '>=10.0.0'}
+    peerDependencies:
+      bufferutil: ^4.0.1
+      utf-8-validate: '>=5.0.2'
+    peerDependenciesMeta:
+      bufferutil:
+        optional: true
+      utf-8-validate:
+        optional: true
+    dev: false
