@@ -21,6 +21,7 @@ let query = {
     "fromBlock": 0,
     "logs": [
       {
+        // Get all events that have any of the topic0 values we want
         "topics": [
           topic0_list,
         ]
@@ -54,16 +55,20 @@ const main = async () => {
   let eventCount = 0;
   const startTime = performance.now()
 
+  // Send an initial non-parallelized request to find first events
   const res = await client.sendEventsReq(query);
   eventCount += res.events.length;
   query.fromBlock = res.nextBlock;
 
+  // Start streaming events in parallel
   const stream = await client.streamEvents(query, { retry: true, batchSize: 10000, concurrency: 12 });
 
   while(true) {
     const res = await stream.recv();
 
+    // Quit if we reached the tip
     if (res === null) {
+      console.log(`reached the tip`);
       break;
     }
 
@@ -74,15 +79,6 @@ const main = async () => {
     const seconds = (currentTime - startTime) / 1000;
 
     console.log(`scanned up to ${res.nextBlock} and got ${eventCount} events. ${seconds} seconds elapsed. Events per second: ${eventCount / seconds}`);
-
-    if (res.archiveHeight == res.nextBlock) {
-      // wait if we are at the head
-      console.log(`reached the tip`);
-      await new Promise(resolve => setTimeout(resolve, 1000));
-    }
-
-    // Continue query from nextBlock
-    query.fromBlock = res.nextBlock;
   }
 };
 
