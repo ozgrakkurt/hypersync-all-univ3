@@ -18,7 +18,7 @@ const client = HypersyncClient.new({
 });
 
 let query = {
-    "fromBlock": 0,
+    "fromBlock": 15123123,
     "logs": [
       {
         "topics": [
@@ -63,7 +63,7 @@ const main = async () => {
 
     const seconds = (currentTime - startTime) / 1000;
 
-    console.log(`scanned up to ${res.nextBlock} and got ${eventCount} events. Events per second: ${eventCount / seconds}`);
+    console.log(`scanned up to ${res.nextBlock} and got ${eventCount} events. ${seconds} seconds elapsed. Events per second: ${eventCount / seconds}`);
 
     if (res.archiveHeight == res.nextBlock) {
       // wait if we are at the head
