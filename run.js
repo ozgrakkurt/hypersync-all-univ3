@@ -18,7 +18,7 @@ const client = HypersyncClient.new({
 });
 
 let query = {
-    "fromBlock": 15123123,
+    "fromBlock": 0,
     "logs": [
       {
         "topics": [
@@ -54,8 +54,18 @@ const main = async () => {
   let eventCount = 0;
   const startTime = performance.now()
 
+  const res = await client.sendEventsReq(query);
+  eventCount += res.events.length;
+  query.fromBlock = res.nextBlock;
+
+  const stream = await client.streamEvents(query, { retry: true, batchSize: 10000, concurrency: 12 });
+
   while(true) {
-    const res = await client.sendEventsReq(query);
+    const res = await stream.recv();
+
+    if (res === null) {
+      break;
+    }
 
     eventCount += res.events.length;
 
