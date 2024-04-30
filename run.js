@@ -14,7 +14,7 @@ const topic0_list = event_signatures.map(sig => keccak256(toHex(sig)));
 console.log(topic0_list);
 
 const client = HypersyncClient.new({
-  url: "http://eth.backup.hypersync.xyz"
+  url: "http://eth.hypersync.xyz"
 });
 
 let query = {
