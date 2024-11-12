@@ -1,5 +1,5 @@
 import { keccak256, toHex } from 'viem';
-import { HypersyncClient } from "@envio-dev/hypersync-client";
+import { HypersyncClient, LogField } from "@envio-dev/hypersync-client";
 
 const event_signatures = [
     "PoolCreated(address,address,uint24,int24,address)",
@@ -14,7 +14,7 @@ const topic0_list = event_signatures.map(sig => keccak256(toHex(sig)));
 console.log(topic0_list);
 
 const client = HypersyncClient.new({
-  url: "http://eth.hypersync.xyz"
+  url: "https://eth.hypersync.xyz"
 });
 
 let query = {
@@ -28,26 +28,18 @@ let query = {
       }
     ],
     "fieldSelection": {
-      "block": [
-        "number",
-        "timestamp",
-        "hash",
-      ],
       "log": [
-        "block_number",
-        "log_index",
-        "transaction_index",
-        "transaction_hash",
-        "data",
-        "address",
-        "topic0",
-        "topic1",
-        "topic2",
-        "topic3"
+        LogField.BlockNumber,
+        LogField.LogIndex,
+        LogField.TransactionIndex,
+        LogField.TransactionHash,
+        LogField.Data,
+        LogField.Address,
+        LogField.Topic0,
+        LogField.Topic1,
+        LogField.Topic2,
+        LogField.Topic3,
       ],
-      "transaction": [
-        "from",
-      ]
     },
 };
 
@@ -55,13 +47,8 @@ const main = async () => {
   let eventCount = 0;
   const startTime = performance.now()
 
-  // Send an initial non-parallelized request to find first events
-  const res = await client.sendEventsReq(query);
-  eventCount += res.events.length;
-  query.fromBlock = res.nextBlock;
-
   // Start streaming events in parallel
-  const stream = await client.streamEvents(query, { retry: true, batchSize: 10000, concurrency: 12 });
+  const stream = await client.streamEvents(query, {});
 
   while(true) {
     const res = await stream.recv();
@@ -72,7 +59,7 @@ const main = async () => {
       break;
     }
 
-    eventCount += res.events.length;
+    eventCount += res.data.length;
 
     const currentTime = performance.now();
 
